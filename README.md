@@ -7,12 +7,12 @@ The ADCeleb corpus itself lives on Zenodo as a metadata-only package—containin
 ## 1. Installation️💻
 To set up the project locally, follow these steps:
 
-  1.Clone the Repository:
+  1. Clone the Repository:
   
     git clone https://github.com/kunxiaogao/ADCELEB.git](https://github.com/kunxiaogao/ADCELEB.git
     cd ADCELEB
 
-  2.Install Dependencies:
+  2. Install Dependencies:
 
   Create a virtual environment and install the required packages:
 
