@@ -29,11 +29,11 @@ After downloading the Zenodo repository, you can download the audio files for ea
     
     python data/download/generate_speakers_folders.py path_to_zenodo_directory
 
-  4. Extract Features: The scripts to extract the acoustic interpretable and non-interpretable features are located in:
+  4. Extract Features: The scripts to extract the acoustic features and linguistic features are located in:
 
-     ```/features/interpretable_features/```
+     ```/features_extraction/acoustic/```
 
-     ```/features/non_interpretable_features/```
+     ```/features_extraction/linguistic/```
 
 ## ⚠️Important Note on Data Availability and Disk Space Requirements
 ### Data Availability
