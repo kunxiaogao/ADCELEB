@@ -2,14 +2,14 @@
 ## Overview📈
 This work investigates novel speech‐based approaches for Alzheimer’s disease (AD) detection, directly tackling the common lack of pre‐diagnosis samples in existing pathological speech collections. To fill this gap, we introduce ADCeleb, a unique longitudinal corpus comprising recordings from 40 celebrities diagnosed with AD alongside 40 matched control speakers. Covering a period from ten years before diagnosis up to the year of diagnosis, ADCeleb offers an unprecedented window into how subtle speech markers evolve as AD develops.
 ## ADCeleb
-The ADCeleb corpus itself lives on [Zenodo repository](https://zenodo.org/records/15515841) as a metadata-only package—containing YouTube URLs, speaker profiles, and transcription files, but no raw audio. To work with the recordings, you pull code from our GitHub repo: its scripts download each subject’s audio, cut the files into segments using the provided timestamps, and compute both interpretable (e.g., prosodic or lexical) and non-interpretable (e.g., embedding) features. During processing, the audio is automatically sorted into per-speaker directories and clipped to the exact time spans indicated in the metadata.
+The ADCeleb corpus itself lives on [Zenodo repository](https://zenodo.org/records/15515841) as a metadata-only package—containing YouTube URLs, speaker profiles, and transcription files, but no raw audio. To work with the recordings, you pull code from our GitHub repo: its scripts download each subject’s audio, cut the files into segments using the provided timestamps, and compute both linguistic and acoustic features. During processing, the audio is automatically sorted into per-speaker directories and clipped to the exact time spans indicated in the metadata.
 
 ## 1. Installation️💻
 To set up the project locally, follow these steps:
 
   1. Clone the Repository:
   
-    git clone https://github.com/kunxiaogao/ADCELEB.git](https://github.com/kunxiaogao/ADCELEB.git
+    git clone https://github.com/kunxiaogao/ADCELEB.git
     cd ADCELEB
 
   2. Install Dependencies:
@@ -28,12 +28,19 @@ After downloading the Zenodo repository, you can download the audio files for ea
   3. The script generate_speakers_folders.py reads the speaker-timestamp CSV for a video and, for each unique speaker ID (e.g. SPEAKER_OO), makes a dedicated folder. It then slices out each audio snippet defined by that speaker’s start–end times and writes it as a WAV file named after the segment’s end timestamp (e.g. 12345.wav). To create these per-speaker audio directories for a given video, use:
     
     python data/download/generate_speakers_folders.py path_to_zenodo_directory
+  4. The preprocessing folder contains three scripts:
 
-  4. Extract Features: The scripts to extract the acoustic features and linguistic features are located in:
+  - `transcribe.py` converts WAV files into plain-text transcripts in TXT format. These transcripts can be used to derive linguistic features.
+  - `video_context_info_total.py` reads all `speakers_info.csv` files and produces a video-level context summary CSV (aggregating per-video metadata across speakers/segments).
+  - `spontaneous_split.py` uses the CSV file produced by `video_context_info_total.py` to split audio segments into spontaneous vs non-spontaneous subsets, writing them to corresponding directories.
+  5. Extract Features: The scripts to extract the acoustic features and linguistic features are located in:
 
-     ```/features_extraction/acoustic/```
-
-     ```/features_extraction/linguistic/```
+  ```
+  /features_extraction/acoustic_embeddings/
+  ```
+  ```
+  /features_extraction/linguistic_embeddings/
+  ```
 
 ## ⚠️Important Note on Data Availability and Disk Space Requirements
 ### Data Availability
