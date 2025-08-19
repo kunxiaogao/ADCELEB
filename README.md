@@ -1,7 +1,7 @@
 # ADCeleb: A Longitudinal Speech Dataset from Public Figures for Early Detection of Alzheimer’s Disease
 ## Overview📈
 This work investigates novel speech‐based approaches for Alzheimer’s disease (AD) detection, directly tackling the common lack of pre‐diagnosis samples in existing pathological speech collections. To fill this gap, we introduce ADCeleb, a unique longitudinal corpus comprising recordings from 40 celebrities diagnosed with AD alongside 40 matched control speakers. Covering a period from ten years before diagnosis up to the year of diagnosis, ADCeleb offers an unprecedented window into how subtle speech markers evolve as AD develops.
-## ADCeleb
+## ADCeleb🎙️
 The ADCeleb corpus itself lives on [Zenodo repository](https://zenodo.org/records/15515841) as a metadata-only package—containing YouTube URLs, speaker profiles, and transcription files, but no raw audio. To work with the recordings, you pull code from our GitHub repo: its scripts download each subject’s audio, cut the files into segments using the provided timestamps, and compute both linguistic and acoustic features. During processing, the audio is automatically sorted into per-speaker directories and clipped to the exact time spans indicated in the metadata.
 
 ## 1. Installation️💻
@@ -62,6 +62,20 @@ Managing this dataset locally can demand a lot of storage, especially if you’r
   2. Verify data availability early to account for geo-blocking or other access limitations.
   3. Consider the trade-off between compression and quality, depending on your project's requirements.
 
+## Citing ADCeleb 📖
+If you use ADCeleb in your research, please cite the following publication:
+
+```bibtex
+@inproceedings{gao25b_interspeech,
+  title     = {{ADCeleb: A Longitudinal Speech Dataset from Public Figures for Early Detection of Alzheimer’s Disease}},
+  author    = {{Kunxiao Gao and Anna Favaro and Najim Dehak and Laureano Moro Velazquez}},
+  year      = {{2025}},
+  booktitle = {{Interspeech 2025}},
+  pages     = {{5688--5692}},
+  doi       = {{10.21437/Interspeech.2025-523}},
+  issn      = {{2958-1796}},
+}
+```
 
 
 
